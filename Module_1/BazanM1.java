@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class WaterHeatingCalcuBazan_m1_2 {
+public class BazanM1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
