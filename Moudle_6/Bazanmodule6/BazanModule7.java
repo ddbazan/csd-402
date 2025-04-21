@@ -7,7 +7,7 @@
  *Destiny Bazan
  * Module6
  */
-public class Bazanmodule6 {
+public class BazanModule7 {
     // Constants
     public static final int STOPPED = 0;
     public static final int SLOW = 1;
@@ -19,14 +19,14 @@ public class Bazanmodule6 {
     private double radius; 
     private String color; 
 
-    public Bazanmodule6() {
+    public BazanModule7() {
         this.speed = STOPPED;
         this.on = false;
         this.radius = 6;
         this.color = "white";
     }
 
-    public Bazanmodule6(int speed, boolean on, double radius, String color) {
+    public BazanModule7(int speed, boolean on, double radius, String color) {
         this.speed = speed;
         this.on = on;
         this.radius = radius;
@@ -34,7 +34,7 @@ public class Bazanmodule6 {
     }
 
     public int getSpeed() {
-        return speed;
+        return this.speed;
     }
 
     public void setSpeed(int speed) {
@@ -42,7 +42,7 @@ public class Bazanmodule6 {
     }
 
     public boolean isOn() {
-        return on;
+        return this.on;
     }
 
     public void setOn(boolean on) {
@@ -50,7 +50,7 @@ public class Bazanmodule6 {
     }
 
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
 
     public void setRadius(double radius) {
@@ -58,34 +58,24 @@ public class Bazanmodule6 {
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    // toString method
-    @Override
-    public String toString() {
-        return "Fan{" +
-                "speed=" + speed +
-                ", on=" + on +
-                ", radius=" + radius +
-                ", color='" + color + '\'' +
-                '}';
-    }
-
-    public static void main(String[] args) {
-        Bazanmodule6 defaultFan = new Bazanmodule6();
-        System.out.println("Default Fan: " + defaultFan);
-        
-        defaultFan.setOn(true);
-        defaultFan.setSpeed(Bazanmodule6.MEDIUM);
-        defaultFan.setColor("blue");
-        System.out.println("Updated Default Fan: " + defaultFan);
-
-        Bazanmodule6 customFan = new Bazanmodule6(Bazanmodule6.FAST, true, 10, "red");
-        System.out.println("Custom Fan: " + customFan);
+    public void displayFanDetails() {
+        if (this.isOn()) {
+            System.out.println("Fan is ON:");
+            System.out.println("Speed: " + this.getSpeed());
+            System.out.println("Color: " + this.getColor());
+            System.out.println("Radius: " + this.getRadius());
+        } else {
+            System.out.println("Fan is OFF:");
+            System.out.println("Color: " + this.getColor());
+            System.out.println("Radius: " + this.getRadius());
+        }
+        System.out.println("--------------------------");
     }
 }
